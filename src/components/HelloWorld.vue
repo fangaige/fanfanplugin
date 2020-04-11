@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-      <p>范改革欢迎你使用fanfan插件</p>
+      <p>范改革欢迎你使用fanfan插件0.1.1</p>
       <button>点我</button>
   </div>
 </template>
