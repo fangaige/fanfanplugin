@@ -44,8 +44,12 @@ const permission = function(router, store, asyncRouters){
       }else{
           store.dispatch("permission/generateRoutesForUniWater",asyncRouters).then(res => {
            console.log('有token，没menu，发getmenu，并过滤好路由表',res)
-           router.addRoutes(res)
-           next({ ...to, replace: true });
+           if(res && res.length > 0){
+            router.addRoutes(res)
+            next({ ...to, replace: true });
+           }else{
+            Message.error('获取菜单为空！请检查权限！');
+           }
 
           }).catch( err=>{
             Message.error('获取菜单权限错误');
