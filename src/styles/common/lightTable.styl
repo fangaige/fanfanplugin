@@ -1,0 +1,72 @@
+
+.table_style .light-table {
+  .el-table {
+    background: #fff;
+    color: #898d8f;
+
+    &:after {
+      display: none;
+    }
+
+    .el-table__header th {
+      background: #fff;
+      color: #2f3239;
+      border-color: $lightTableBorder;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
+
+  /* 颜色控制 */
+  .el-table--border::after, .el-table--group::after, .el-table::before {
+    background: $lightTableBorder;
+  }
+
+  .el-table--border, .el-table--group {
+    border-color: $lightTableBorder;
+  }
+
+  .el-table td, .el-table th {
+    background: #fafbfc;
+  }
+
+  .el-table--striped .el-table__body tr.el-table__row--striped td {
+    background: #fff;
+  }
+
+  .el-table--enable-row-hover .el-table__body tr:hover>td, .el-table__body tr.hover-row>td {
+    border-right-color: $lightTableBorder;
+    background-color: #fafbfc;
+    color: #898d8f;
+  }
+
+  .el-table--striped .el-table__body tr.el-table__row.hover-row>td, .el-table--striped .el-table__body tr.el-table__row--striped.hover-row>td, .el-table--striped .el-table__body tr.el-table__row--striped.current-row td, .el-table__body tr.el-table__row.current-row >td {
+    border-color: $lightTableBorder;
+    background-color: #edf5fc;
+    color: #898d8f;
+  }
+
+  .el-table__fixed-right-patch {
+    background: #fff;
+  }
+
+  /* 表格操作 */
+  .el-button {
+    background: transparent;
+    border: none;
+
+    .iconfont {
+      font-size: 18px;
+    }
+
+    &.my-table-detail {
+      color: #f57425;
+    }
+
+    &.my-table-del {
+      color: #e24a4e;
+    }
+  }
+}

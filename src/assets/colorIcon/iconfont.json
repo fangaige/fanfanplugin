@@ -1,0 +1,121 @@
+{
+  "id": "1096081",
+  "name": "arcgis-color",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "8346039",
+      "name": "famenjing",
+      "font_class": "famenjing",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "8346040",
+      "name": "famen",
+      "font_class": "famen",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
+      "icon_id": "8346041",
+      "name": "jianxiujing",
+      "font_class": "jianxiujing",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    },
+    {
+      "icon_id": "8346042",
+      "name": "paiqifa",
+      "font_class": "paiqifa",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    },
+    {
+      "icon_id": "8346043",
+      "name": "shuibiaojing",
+      "font_class": "shuibiaojing",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "8346044",
+      "name": "xiaofangshuan",
+      "font_class": "xiaofangshuan",
+      "unicode": "e634",
+      "unicode_decimal": 58932
+    },
+    {
+      "icon_id": "8346045",
+      "name": "shuibiao",
+      "font_class": "shuibiao",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "8346046",
+      "name": "xiaofangjing",
+      "font_class": "xiaofangjing",
+      "unicode": "e636",
+      "unicode_decimal": 58934
+    },
+    {
+      "icon_id": "9140812",
+      "name": "操作形状-02",
+      "font_class": "caozuoxingzhuang-",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "9140813",
+      "name": "操作形状-03",
+      "font_class": "caozuoxingzhuang-1",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "9140814",
+      "name": "操作形状-01",
+      "font_class": "caozuoxingzhuang-2",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "9204143",
+      "name": "暂停",
+      "font_class": "zanting",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "9204153",
+      "name": "播放",
+      "font_class": "bofang",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "9976643",
+      "name": "guancedian",
+      "font_class": "guancedian",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "10891284",
+      "name": "操作形状_线-04",
+      "font_class": "caozuoxingzhuang_xian-",
+      "unicode": "e638",
+      "unicode_decimal": 58936
+    },
+    {
+      "icon_id": "10899198",
+      "name": "操作形状_当前范围-05",
+      "font_class": "caozuoxingzhuang_dangqianfanwei-",
+      "unicode": "e639",
+      "unicode_decimal": 58937
+    }
+  ]
+}

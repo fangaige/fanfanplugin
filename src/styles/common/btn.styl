@@ -1,0 +1,314 @@
+
+myBtn(color = 2px, fontColor = #fff) {
+  background: color;
+  border-color: color;
+  color: fontColor;
+  border-radius: 2px;
+
+  &:focus {
+    border-color: color;
+    background: color;
+    color: #fff;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+// .el-button.my-blue{
+// myBtn(#68788f)
+// }
+.el-button.my-show {
+  myBtn(#69957b);
+}
+
+.el-button.my-tianjia {
+  myBtn(#946c5f);
+}
+
+.el-button.my-filter-show {
+  myBtn(#69957b);
+}
+
+.el-button.my-add {
+  myBtn(#5b8a6e);
+}
+
+.el-button.my-del {
+  myBtn(#a66666);
+}
+
+.el-button.my-edit {
+  myBtn(#967c5d);
+}
+
+.el-button.my-search {
+  myBtn(#68788f);
+}
+
+.el-button.my-reset {
+  myBtn(#68838f);
+}
+
+.el-button.my-export {
+  myBtn(#958169);
+}
+
+.el-button.my-choose-point {
+  myBtn(#688f89);
+}
+
+.el-button.my-choose {
+  myBtn(#5d807a);
+}
+
+.el-button.my-analysis {
+  myBtn(#688f89);
+}
+
+.el-button.my-clean {
+  myBtn(#956969);
+}
+
+.el-button.my-count {
+  myBtn(#688c8f);
+}
+
+.el-button.my-setting {
+  myBtn(#828282);
+}
+
+.el-button.my-regionIns {
+  myBtn(#688c8f);
+}
+
+.el-button.my-routeIns {
+  myBtn(#688c8f);
+}
+
+.el-button.my-all {
+  myBtn(#a76868);
+}
+
+.el-button.my-process {
+  myBtn(#578c90);
+}
+
+.el-button.my-closeChoose {
+  myBtn(#557d8c);
+}
+
+.el-button.my-setCoordinate {
+  myBtn(#69957b);
+}
+
+.el-button.my-evenReport {
+  myBtn(#4e7b97);
+}
+
+.el-button.my-allArea {
+  myBtn(#a76868);
+}
+
+.el-button.my-task-sell {
+  myBtn(#69957b);
+}
+
+.el-button.my-verify {
+  myBtn(#69957b);
+}
+
+.el-button.my-see {
+  myBtn(#69957b);
+}
+
+.el-button.my-restore {
+  myBtn(#557d8c);
+}
+
+.el-button.my-submit {
+  myBtn(#0091da);
+}
+
+.el-button.password-submit {
+  myBtn(#0d85de);
+  font-size: 18px;
+  padding: 10px 20px;
+}
+
+.el-button.password-cancel {
+  myBtn(#879199);
+  font-size: 18px;
+  padding: 10px 20px;
+}
+
+.el-button.my-SeniorSearch {
+  color: #ffffff;
+  background: transparent;
+}
+
+.my-detail {
+  border-bottom: 1px dashed #ff912e;
+  color: #ff912e;
+  cursor: pointer;
+}
+
+.my-show-span {
+  color: #30a839;
+}
+
+.el-button {
+  .iconfont {
+    font-size: 12px;
+  }
+}
+
+my-tableout() {
+  background: transparent;
+  color: #afbcc4;
+  border-color: #58647b;
+  border-radius: 2px;
+  height: 30px;
+  padding: 0 10px;
+
+  .iconfont {
+    color: #afbcc4;
+    font-size: 16px;
+    vertical-align: text-bottom;
+    margin-right: 2px;
+  }
+
+  &.active {
+    background: #53678e;
+    border-color: #58647b;
+    color: #fff;
+  }
+
+  &:hover, &:focus {
+    background: #53678e;
+    border-color: #58647b;
+    color: #fff;
+
+    .iconfont {
+      color: #fff;
+    }
+  }
+}
+
+.el-button.my-tableout {
+  my-tableout();
+}
+
+my-table-icon(color) {
+  myBtn(color);
+  width: 20px;
+  height: 20px;
+  padding: 0;
+
+  .iconfont {
+    font-size: 14px;
+
+    &:before {
+      margin-right: 0;
+    }
+  }
+}
+
+.el-button.my-table-del {
+  my-table-icon(#bf4e49);
+}
+
+.el-button.my-table-edit {
+  my-table-icon(#c7741c);
+}
+
+.el-button.my-table-detail {
+  my-table-icon(#0b9fd0);
+}
+
+.el-button.my-tableout-cancel {
+  my-tableout();
+  width: 70px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.el-button.my-tableout-submit {
+  width: 70px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0;
+  background-color: #0080c1;
+  color: #fff;
+  border: none;
+
+  &:hover {
+    background-color: #0099c1;
+  }
+}
+
+.my-add-point {
+  background: transparent;
+  border: none;
+  color: #28b46d;
+
+  &:hover, &:focus {
+    //background: transparent;
+    border: none;
+  }
+
+  .text {
+    //text-decoration: underline;
+  }
+
+  .iconfont {
+    text-decoration: none;
+    font-size: 16px;
+    vertical-align: top;
+  }
+}
+
+.el-button.my-dialog-submit {
+  width: 78px;
+  height: 32px;
+  line-height: 32px;
+  color: #fefefe;
+  background-image: linear-gradient(
+    0deg,
+    #0061da 0%,
+    #0099e6 100%
+  );
+  border-radius: 2px;
+  font-size: 16px;
+  padding: 0;
+}
+
+.el-button.my-dialog-cancel {
+  width: 78px;
+  height: 32px;
+  line-height: 32px;
+  border: solid 1px #0091da;
+  background: transparent;
+  color: #0091da;
+  font-size: 16px;
+  border-radius: 2px;
+  padding: 0;
+}
+
+.my-radio {
+  margin-right: 10px;
+  line-height: 30px;
+}
+
+.addColor {
+  color: #31b167;
+}
+
+.editColor {
+  color: #e17308;
+}
+
+.delColor {
+  color: #d3474a;
+}

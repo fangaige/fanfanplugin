@@ -1,0 +1,51 @@
+.step_hidden_left_title{
+	display:flex;
+	width: 570px
+	.el-steps--simple{
+		padding: 4px 6px
+		background-color: transparent
+		.el-step__head{
+			display: none
+		}
+		.el-step__arrow{
+            height:0;
+            border:none;
+            border-top:dashed 1px #036fa6;
+			width: 18px;
+		}
+	}
+}
+.el-step.is-simple .el-step__title{
+	font-size: 12px
+	padding: 0;
+	border-radius: 2px;
+	cursor:pointer
+	white-space: nowrap;
+	display: flex;
+    border:none;
+}
+.el-step.is-simple 	.is-finish{
+	//background-color:#159d94
+	//color: #eee	
+	
+}
+.el-step.is-simple .el-step__arrow::after, .el-step.is-simple .el-step__arrow::before{
+	height: 10px
+}
+.el-step.is-simple .el-step__arrow::before{
+	transform: rotate(-45deg) translateY(-3px);
+	display:none;
+}
+.el-step.is-simple .el-step__arrow::after{
+	transform: rotate(45deg) translateY(3px);
+	display:none;
+}
+.el-step.is-simple:not(:last-of-type) .el-step__title{
+	max-width:initial
+}
+.table-state{
+	.el-step{
+		max-width: inherit !important;
+	}
+	
+}

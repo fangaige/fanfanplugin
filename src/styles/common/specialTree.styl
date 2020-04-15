@@ -1,0 +1,99 @@
+.specialTree {
+    $treeBoderColor = #abb0b3;
+
+    .el-tree-node {
+        position: relative;
+        padding-left: 0;
+    }
+
+    .el-tree-node__content {
+        padding-left: 16px !important;
+    }
+
+    .el-tree-node__children {
+        padding-left: 16px !important;
+    }
+
+    .el-tree-node :last-child:before {
+        height: 38px;
+    }
+
+    .el-tree-node:before, .el-tree-node:after {
+        content: '';
+        left: -4px;
+        position: absolute;
+        right: auto;
+        border-width: 1px;
+    }
+
+    .tree :first-child .el-tree-node:before {
+        border-left: none;
+    }
+
+    .el-tree-node:before {
+        border-left: 1px solid $treeBoderColor;
+        bottom: 0px;
+        height: 100%;
+        top: -24px;
+        width: 1px;
+    }
+
+    .el-tree-node:after {
+        border-top: 1px dashed $treeBoderColor;
+        height: 1px;
+        top: 13px;
+        width: 16px;
+    }
+
+    .el-tree-node > .el-tree-node__content > .treeIcon {
+        width: 0;
+        height: 0;
+        display: inline-block;
+        border-top: 3px solid $treeBoderColor;
+        border-right: 3px solid $treeBoderColor;
+        border-bottom: 3px solid transparent;
+        border-left: 3px solid transparent;
+        padding: 0;
+        margin-right: 10px;
+        position: relative;
+        top: 3px;
+        left: -10px;
+
+        &.is-leaf {
+            border: none;
+        }
+
+        &.expanded {
+            transform: rotate(0);
+            border-top: 3px solid transparent;
+            border-right: 3px solid $treeBoderColor;
+            border-bottom: 3px solid $treeBoderColor;
+            border-left: 3px solid transparent;
+            top: -2px;
+
+            &:before {
+                content: '';
+                width: 1px;
+                position: absolute;
+                left: 3px;
+                right: auto;
+                top: -4px;
+                height: 20px;
+                border-left: 1px solid #abb0b3;
+            }
+        }
+    }
+
+    .el-tree-node.is-current>.el-tree-node__content, .el-tree-node__content:hover {
+        background-color: transparent;
+        color: #1babf3;
+    }
+}
+
+.specialTree >.el-tree-node:before {
+    border-left: none;
+}
+
+.specialTree >.el-tree-node:after {
+    border-top: none;
+}

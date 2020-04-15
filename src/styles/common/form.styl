@@ -1,0 +1,322 @@
+.el-radio__input .el-radio__inner, .el-radio__input.is-checked .el-radio__inner {
+  background: $radiusBgColor;
+  color: $paginationFontColor;
+  border-color: $radiusBorderColor;
+}
+
+.el-radio__input.is-checked .el-radio__inner {
+  border-color: #0091da;
+}
+
+.el-radio.is-checked .el-radio__inner::after {
+  background-color: #0091da;
+  width: 6px;
+  height: 6px;
+}
+
+.light-radio .el-radio.is-checked .el-radio__inner {
+  border-color: #0091da !important;
+}
+
+.light-radio .el-radio.is-checked .el-radio__inner::after {
+  background-color: #0091da;
+  width: 6px;
+  height: 6px;
+}
+
+.el-checkbox__input {
+  .el-checkbox__inner {
+    background: transparent;
+    border: solid 1px #54668a;
+  }
+
+  &.is-checked .el-checkbox__inner {
+    background-color: #0091da;
+    border-color: #0091da;
+  }
+}
+
+.table-left.el-row {
+  margin-left: -16px !important;
+}
+
+.table-left.el-col {
+  margin-left: -34px !important;
+}
+
+.el-date-editor, .el-range-editor, .el-input__inner, .el-date-editor--timerange, .el-range-editor--small {
+  .el-range-separator {
+    width: 30px;
+  }
+
+  .el-input__prefix {
+    right: 1px;
+    font-size: 14px;
+    left: auto;
+  }
+
+  .el-input__icon {
+    position: absolute;
+    top: 1px;
+    right: 0;
+  }
+}
+
+// 数字输入框
+.el-input-number.is-controls-right .el-input__inner {
+  padding-right: 15px;
+  text-align: left;
+}
+
+.el-input-number, .el-input__inner {
+  height: 28px;
+  line-height: 28px;
+  width: 100%;
+
+  .el-input-number__decrease, .el-input-number__increase {
+    width: 20px;
+    background: transparent;
+    border: none !important;
+    color: #fff;
+
+    &:hover {
+      color: #409eff;
+    }
+  }
+}
+
+.tab-btn-wraper {
+  padding-left: 10px;
+}
+
+// 巡检设置对齐
+.insSetControl {
+  padding: 6px 10px;
+}
+
+.Inset {
+  .formItemNone {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 1300px) {
+  // .el-form-item__content{
+  // max-width:400px
+  // }
+  // .large-item{
+  // .el-form-item__content{
+  // max-width:400px
+  // }
+  // }
+}
+
+.formItem {
+  .iconfont {
+    font-size: 12px;
+    line-height: 12px;
+
+    &:before {
+      margin-right: 3px;
+    }
+  }
+}
+
+.table_style {
+  .el-form {
+    padding: 4px 0;
+    background: $pageFormBgColor;
+
+    .el-select {
+      width: 100%;
+    }
+
+    .el-row {
+      padding: 4px 8px 4px;
+      margin: 0;
+
+      // &:first-child{
+      // background:#000;
+      // }
+      // &.row-bg-white{
+      // background:#f3f4f9;
+      // color:#000;
+      // .el-form-item__label{
+      // color:#000;
+      // }
+      // }
+      // 左侧表单的标题样式
+      .form-title {
+        font-size: 15px;
+        line-height: 30px;
+        color: orange;
+        padding-left: 20px;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 5px;
+          height: 16px;
+          vertical-align: sub;
+          background: orange;
+          margin-right: 10px;
+        }
+      }
+
+      .el-col {
+        border-radius: 4px;
+        height: 30px;
+        text-align: center;
+      }
+    }
+
+    // 更改mini对齐
+    .el-form-item__content {
+      line-height: normal;
+
+      .el-date-editor .el-range-input {
+        background: transparent;
+        color: #fff;
+      }
+
+      .el-date-editor--date.el-input .el-input__inner {
+        padding-left: 15px;
+      }
+
+      // 时间选择器样式修改
+      .el-date-editor--daterange.el-input, .el-date-editor--daterange.el-input__inner, .el-date-editor--timerange.el-input, .el-date-editor--timerange.el-input__inner {
+        width: 100%;
+        border-radius: 2px;
+      }
+
+      .el-date-editor .el-range-separator {
+        width: auto !important;
+        color: #fff;
+      }
+
+      .el-cascader__label, .el-cascader__label span {
+        color: $formFontColor;
+      }
+
+      .el-input__inner, .el-textarea__inner {
+        background: $formInputColor;
+        color: $formFontColor;
+        border-color: $formInputBorderColor;
+        border-radius: 2px;
+      }
+    }
+
+    .el-form-item__label {
+      color: #fff;
+      line-height: 30px;
+      padding: 0;
+    }
+
+    // 更改switch的颜色
+    .el-switch {
+      height: 30px;
+
+      .el-switch__label {
+        color: #F2F2F2;
+      }
+
+      .el-switch__label.is-active {
+        color: #EA7616;
+      }
+
+      &.is-checked .el-switch__core {
+        border-color: #EA7616;
+        background-color: #EA7616;
+      }
+    }
+
+    // 修改form内表头上方查询条件的按钮样式
+    .data-btn-wrapper {
+      position: absolute;
+      top: -33px;
+
+      .el-radio {
+        margin-right: 10px;
+      }
+
+      .el-radio__label {
+        color: #fff;
+      }
+    }
+
+    .data-select-wrapper {
+      position: relative;
+      z-index: 2;
+    }
+
+    .row-select-btn.el-button {
+      &.orange-active-btn {
+        background: #f98802;
+        color: #fff;
+
+        &:hover {
+          background: #f98802;
+          border-color: #f98802;
+          color: #fff;
+          opacity: 0.8;
+        }
+      }
+
+      &:hover {
+        border-color: #009688;
+        color: #009688;
+      }
+    }
+
+    .el-select-dropdown__wrap.el-scrollbar__wrap {
+      overflow-x: hidden;
+    }
+  }
+
+  // 表格上方的操作表格按钮
+  .table-btn-control {
+    border-top: 1px solid #58647b;
+    margin: 0;
+    padding: 4px 0;
+    box-sizing: content-box;
+
+    .el-row {
+      padding: 0 8px !important;
+    }
+  }
+}
+
+.side_action_bar_placeholder .el-input {
+  line-height: 30px;
+}
+
+.el-select-dropdown.el-popper {
+  margin-top: 8px;
+
+  .popper__arrow {
+    display: none;
+  }
+}
+
+.el-scrollbar__wrap {
+  margin-right: -20px;
+  margin-bottom: -20px;
+}
+
+// selectTree控件的全局样式
+.selectTreeScroll {
+  .el-scrollbar__wrap {
+    overflow-x: hidden;
+  }
+}
+
+// 复选框
+.el-checkbox__input.is-checked .el-checkbox__inner {
+  background: url('~@assets/toolIcon/UI/treeCheck.png') #0d85de no-repeat;
+  background-size: 70% 70%;
+  background-position: center;
+
+  &:after {
+    display: none;
+  }
+}

@@ -1,0 +1,23 @@
+.el-loading-mask.is-fullscreen .el-loading-spinner{
+    font-size:80px;
+    perspective: 1000px;
+   
+    .icon-loading{
+        transform-style: preserve-3d;
+        display: inline-block;
+        display: inline-block;
+        font-size:60px;
+        color: rgb(215, 195, 138);
+        animation:loadAnimate 2s linear infinite;
+    }
+
+    .el-loading-text{
+        color :#bdbeab;
+        font-size: 16px;
+    }
+}
+
+ @keyframes loadAnimate{
+    0%{}
+    100%{ transform: rotateZ(360deg)}
+ }

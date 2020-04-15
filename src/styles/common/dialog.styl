@@ -1,0 +1,501 @@
+// 框选查询弹出框内容容器样式
+.word-breack-all{
+  word-break: break-all; 
+}
+.PipeQueryDialog.fixed {
+  position: fixed;
+  width: auto;
+}
+
+.PipeQueryDialog {
+  position: absolute;
+  top: 0;
+  width: 0;
+  height: 0;
+  overflow: inherit;
+  margin: 0 auto;
+
+  .square_query_dialog_content {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: #FFF;
+
+    .left_tree_wrapper {
+      min-width: 25%;
+      z-index: 1;
+      height: $dialogTableHeight;
+      background: #fff;
+      box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.2);
+      border-radius: 2px;
+
+      .el-scrollbar {
+        height: 100%;
+      }
+    }
+
+    .district_tree {
+      color: #7a7e80;
+
+      .el-tree-node.is-current>.el-tree-node__content {
+        background: transparent;
+      }
+
+      .el-tree-node__children {
+        .is-current {
+          .el-tree-node__content {
+            background: #FFE48D !important;
+            color: #000 !important;
+          }
+        }
+
+        .el-tree-node__content:hover {
+          color: #000;
+          background: #f5f7fa;
+        }
+      }
+
+      .el-tree-node__content:hover {
+        background: #f5f7fa;
+      }
+
+      .el-tree-node__content, .expanded.el-tree-node__expand-icon {
+        color: #494b4d;
+      }
+    }
+
+    .left_tree_wrapper {
+      .left-tree-lable {
+        font-size: 14px;
+        color: #7a7e80;
+        padding-left: 36px;
+        line-height: 28px;
+        cursor: pointer;
+
+        &:hover {
+          background: #f5f7fa;
+        }
+
+        &.active {
+          background: #e1e7ea;
+        }
+      }
+
+      .left-tree-title {
+        line-height: 42px;
+
+        &:before {
+          content: '';
+          margin: 0 6px 0 14px;
+          vertical-align: text-top;
+          display: inline-block;
+          width: 4px;
+          height: 16px;
+          background-color: #3790f1;
+          background-image: linear-gradient(0deg, #3790f1 0%, #33c2fd 100%);
+          border-radius: 2px;
+        }
+      }
+
+      .el-collapse-item__header {
+        color: #494b4d;
+        font-size: 16px;
+        height: 34px;
+        line-height: 34px;
+        cursor: default;
+
+        i {
+          margin: 0 10px;
+          transition: transform 0.3s ease;
+        }
+
+        &.some {
+          &:before {
+            display: none;
+          }
+        }
+
+        &.is-active {
+          i {
+            transform: rotate(90deg);
+          }
+        }
+
+        .el-collapse-item__arrow.el-icon-arrow-right {
+          display: none;
+        }
+      }
+
+      .el-collapse-item__wrap {
+        border-bottom: 0;
+      }
+    }
+
+    .district_table_container {
+      overflow: hidden;
+      padding: 10px 10px 0;
+      height: calc(50vh + 107px);
+      display: flex;
+      flex-direction: column;
+
+      .el-table {
+        color: #7a7e80;
+
+        .el-table__header th {
+          background-image: linear-gradient(0deg, #dce2e5 0%, #ebf1f5 100%);
+          height: 46px;
+          padding: 0;
+          color: #494b4d;
+        }
+
+        .el-table__body tr.current-row>td, .el-table__body tr.hover-row.current-row>td, .el-table__body tr.hover-row>td {
+          background-color: #ebf1f5;
+        }
+
+        .cell {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  .el-dialog {
+    .el-dialog__body {
+      padding: 0 !important;
+
+      .panel-body.f-full {
+        height: 100%;
+      }
+    }
+
+    .dialog-footer {
+      line-height: 47px;
+    }
+  }
+
+  .el-pagination {
+    background: #fff;
+    color: #494b4d;
+    text-align: right;
+    height: $paginationHeight;
+    line-height: $paginationHeight;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 10px;
+
+    .el-pagination__editor.el-input .el-input__inner, .el-select .el-input .el-input__inner, .el-pager li, .btn-next, .btn-prev {
+      border-radius: 2px;
+      background: #fff;
+      font-weight: normal;
+      color: #494b4d;
+      border-color: #c4cacc;
+    }
+
+    .el-pager li.active {
+      background-color: #ebf2f5;
+    }
+
+    .btn-next, .btn-prev {
+      border: 1px solid #c4cacc;
+      border-color: #c4cacc;
+    }
+
+    button:disabled {
+      background: transparent;
+    }
+
+    .el-pagination__editor.el-input {
+      width: 36px;
+      padding: 0 3px;
+    }
+
+    .el-pagination__total, .el-pagination__jump {
+      color: #494b4d;
+      letter-spacing: 0.3px;
+    }
+
+    .el-pager {
+      border: 1px solid #c4cacc;
+      height: 28px;
+      line-height: 28px;
+      box-sizing: border-box;
+      color: #333;
+
+      li, .more::before {
+        line-height: 26px;
+        height: 26px;
+      }
+    }
+  }
+}
+
+.myDialog {
+  // 弹框样式
+  .el-dialog {
+    border-radius: 6px 2px 2px 2px;
+    margin: 0 auto 30px;
+
+    .el-dialog__header {
+      border-radius: 2px 2px 0 0;
+      background: $dialogTitleBgColor;
+      text-align: left;
+      height: 42px;
+      line-height: 42px;
+      padding: 0 20px;
+      box-shadow: 0px 2px 6px 0px rgba(44, 49, 60, 0.23);
+
+      .el-dialog__title {
+        color: #fff;
+        font-size: 16px;
+      }
+
+      .el-dialog__headerbtn {
+        top: 14px;
+        color: #fff;
+
+        &:hover i {
+          color: #fff;
+        }
+      }
+    }
+
+    .el-dialog__body {
+      padding: 20px 0 0;
+    }
+  }
+
+  .el-dialog__footer {
+    padding-top: 0;
+  }
+
+  .dialog-footer {
+    text-align: center;
+
+    .el-button+.el-button {
+      margin-left: 30px;
+    }
+  }
+}
+
+.myDialog .el-dialog .el-form, .Home_container .mian-wrapper .lightForm {
+  background: #fff;
+  width: 80%;
+  margin: 0 auto;
+
+  .el-form-item__label {
+    color: #626566;
+  }
+
+  .el-form-item__content .el-textarea__inner,
+  .el-date-editor.el-input,
+  .el-date-editor.el-input__inner,
+  .el-date-editor .el-range-input,
+  .el-select .el-input .el-input__inner,
+  .el-input__inner, .el-textarea__inner,
+  .el-form-item__content .el-input__inner {
+    background: #fff;
+    color: #333;
+    border-color: #c4c9cc;
+    border-radius: 2px;
+  }
+
+  .el-select .el-input .el-input__inner，, .el-input__inner, .el-textarea__inner {
+    width: 100%;
+  }
+
+  .el-input-number, .el-input__inner {
+    height: 32px;
+    line-height: 32px;
+  }
+
+  .el-input-number {
+    .el-input-number__increase, .el-input-number__decrease {
+      color: #C0C4CC;
+
+      &:hover {
+        color: #409eff;
+      }
+    }
+
+    input {
+      text-align: left;
+    }
+  }
+
+  .el-date-editor .el-range-separator {
+    color: #a6abad;
+  }
+
+  .el-radio__input .el-radio__inner {
+    border: solid 1px #c4c9cc;
+    background: #fff;
+  }
+
+  .el-radio.is-checked .el-radio__inner::after {
+    background-color: #0091da;
+    width: 6px;
+    height: 6px;
+  }
+
+  .el-radio {
+    line-height: 30px;
+    margin-right: 14px;
+  }
+}
+
+.Home_container .mian-wrapper .el-form.lightForm {
+  width: 100%;
+}
+
+// 巡检养护表格
+.el-dialog.order_detail_dialog {
+  .el-dialog__body {
+    padding: 10px 20px;
+
+    .header_title {
+      white-space: nowrap;
+      padding-top: 5px;
+    }
+
+    .el-step__arrow {
+      border-color: #9fa3a6;
+    }
+
+    .el-tabs .el-tabs__header {
+      border-color: #dce2e5;
+    }
+
+    .el-tabs .el-tabs__header .el-tabs__nav-scroll .el-tabs__nav .el-tabs__item.is-active {
+      background: #fff;
+      color: #313233;
+      border-color: #dce2e5;
+    }
+
+    .el-tabs .el-tabs__header .el-tabs__nav-scroll .el-tabs__nav .el-tabs__item:hover {
+      color: #333;
+    }
+
+    .el-scrollbar__wrap {
+      height: 50vh;
+    }
+
+    .event_order_pane {
+      .event_order_pane-item {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        font-size: 14px;
+
+        .el-row {
+          padding: 0;
+          height: 32px;
+          line-height: 32px;
+        }
+
+        .title {
+          border: solid 1px #dce2e5;
+          border-bottom: none;
+          padding-left: 10px;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .dialogDetailMap {
+      width: 100%;
+      height: 400px;
+      margin: 20px 0;
+    }
+
+    .dialog-table {
+      border: 1px solid #dce2e5;
+      border-collapse: collapse;
+      width: 100%;
+
+      .wrapperCol {
+        border-collapse: collapse;
+        padding: 0 !important;
+        border: none !important;
+
+        .el-col, td {
+          padding-left: 10px;
+          color: #494c4d;
+          text-align: left;
+          height: 34px;
+          line-height: 34px;
+          border-top: dashed 1px #dce2e5;
+
+          &.dialog-table-lable {
+            color: #7a7e80;
+            border-radius: 0;
+            background-color: #ebf1f5;
+            border: none !important;
+            text-align: left;
+            min-width: 66px;
+          }
+        }
+
+        &.dialog_img-wrapper {
+          height: 72px;
+
+          .el-col {
+            height: 72px;
+            line-height: 72px;
+          }
+
+          .dialog_img {
+            padding: 10px;
+
+            img {
+              height: 52px;
+              vertical-align: middle;
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+
+      .el-col {
+        padding-left: 10px;
+        color: #494c4d;
+        text-align: left;
+        line-height: 32px;
+        border-top: dashed 1px #dce2e5;
+
+        &.dialog-table-lable {
+          color: #7a7e80;
+          border-radius: none;
+          background-color: #ebf1f5;
+          border: none !important;
+          text-align: right;
+        }
+      }
+
+      &.dialog_img-wrapper {
+        height: 72px;
+
+        .el-col {
+          height: 72px;
+          line-height: 72px;
+        }
+
+        .dialog_img {
+          padding: 10px;
+
+          img {
+            height: 52px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.insPlanDialog {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,169 @@
+
+// @import '~@styles/common/variables.styl';
+// @import '~@styles/fix-slide-expand.styl';
+// // 引入加载条样式
+@import './common/permission.styl';
+// // 左侧表格css样式
+// @import '~@styles/common/table.styl';
+// // chart样式
+// // @import '~@styles/common/chart.styl';
+// // btn的样式
+// @import '~@styles/common/btn.styl';
+// // dialog的样式
+// @import '~@styles/common/dialog.styl';
+// // step的样式
+// @import '~@styles/common/step.styl';
+// // tab的样式
+// @import '~@styles/common/tab.styl';
+// // form的样式
+// @import '~@styles/common/form.styl';
+// // olMap的样式
+// // @import '~@styles/common/olMap.styl';
+// // el-tree的样式
+// @import '~@styles/common/tree.styl';
+// // 登陆样式
+// @import '~@styles/Login.styl';
+// @import '~@styles/changePassword.styl';
+// // 面包屑  等白色大表单的样式
+// @import '~@styles/GIS/lightFormStyle.styl';
+// // 白色表格  整体设置表格
+// @import '~@styles/common/lightTable.styl';
+// // 白色表格  整体设置表格
+// @import '~@styles/common/specialTree.styl';
+// 根据页面名称对应的css样式
+@import './Home.styl';
+
+// @import '~@styles/systemSetting/modular.styl';
+
+.blue-text {
+    color: #0091da;
+}
+
+.heightFlex1 {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-basis: auto;
+    overflow: hidden;
+}
+
+.height100 {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.felx1AndDispalyFlex {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    flex-basis: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.h100 {
+    height: 100%;
+}
+
+.max130 {
+    max-width: 130px;
+}
+
+.max230 {
+    max-width: 230px;
+}
+
+.GISImage {
+    width: 100px;
+    vertical-align: top;
+    margin: 0 10px;
+}
+
+// 上传
+.avatar-uploader .el-upload {
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.avatar-uploader .el-upload:hover {
+    border-color: #409EFF;
+}
+
+.avatar-uploader-icon {
+    font-size: 28px;
+    color: #8c939d;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+}
+
+.avatar {
+    width: 100px;
+    display: block;
+}
+
+// 竖向滚动条
+.column.el-scrollbar {
+    flex: 1;
+    flex-basis: auto;
+
+    .el-scrollbar__wrap {
+        overflow-x: hidden;
+    }
+}
+
+// ul样式
+ul {
+    list-style: none;
+}
+
+// 表格icon样式
+.table-icon {
+    height: 20px;
+    vertical-align: middle;
+}
+// span icon样式
+._table-colorPipe-icon{
+     height: 4px;
+     width:20px;
+     display:inline-block;
+     vertical-align: middle;
+}
+// 上传图标样式
+.upload-img.el-form-item {
+    text-align: left;
+
+    .el-form-item__content {
+        line-height: 30px;
+    }
+
+    .my-choose-point {
+        text-decoration: underline;
+        white-space: nowrap;
+
+        img {
+            width: 20px;
+            vertical-align: sub;
+            margin-right: 10px;
+        }
+
+        span {
+            color: #409EFF;
+        }
+    }
+}
+
+/* 右侧防止屏幕过小无法操作 */
+.rightScroll {
+    .el-scrollbar__view {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+    }
+}
