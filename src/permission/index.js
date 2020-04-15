@@ -30,6 +30,7 @@ const permission = function(router, store, asyncRouters){
         // Uniwater登录,存uniwatertoken，userInfo
         await store.dispatch("user/uniwaterLogin").then().catch(error => {
           Message.error('登录错误!');
+          loginerr()
         }) 
     }
     const hasToken = authInfo.getUniwaterToken()
@@ -49,6 +50,7 @@ const permission = function(router, store, asyncRouters){
           }).catch( err=>{
             Message.error('获取菜单权限错误');
             console.error(err)
+            loginerr()
           })
         
       }
@@ -56,8 +58,9 @@ const permission = function(router, store, asyncRouters){
       if (whiteList.indexOf(to.path) !== -1) {
         next();
       } else {
-        next(`/login?redirect=${to.path}`);
-        endLoading();
+        loginerr()
+        // next(`/login?redirect=${to.path}`);
+        // endLoading();
       }
     }
   
@@ -87,6 +90,11 @@ const permission = function(router, store, asyncRouters){
       //使用Element loading-close 方法
       loading.close();
     }
+
+    function loginerr() {
+      // 跳转到 uniwater的 登录页面
+      location.replace(store.state.config.UniWaterLogin);
+  }
 }
 
 export default permission
