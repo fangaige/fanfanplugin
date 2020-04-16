@@ -30,6 +30,7 @@ const permission = function(router, store, asyncRouters){
         // Uniwater登录,存uniwatertoken，userInfo
         await store.dispatch("user/uniwaterLogin").then().catch(error => {
           Message.error('登录错误!');
+          console.error(error)
           loginerr()
         }) 
     }
@@ -52,7 +53,7 @@ const permission = function(router, store, asyncRouters){
            }
 
           }).catch( err=>{
-            Message.error('获取菜单权限错误');
+            Message.error('获取菜单权限错误!');
             console.error(err)
             loginerr()
           })
@@ -62,6 +63,7 @@ const permission = function(router, store, asyncRouters){
       if (whiteList.indexOf(to.path) !== -1) {
         next();
       } else {
+        Message.error('请先登录！');
         loginerr()
         // next(`/login?redirect=${to.path}`);
         // endLoading();
