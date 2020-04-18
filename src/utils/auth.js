@@ -1,3 +1,17 @@
+// 不用自己的menu 全屏
+const iframeKey = "iframe";
+export function getIframe() {
+  return JSON.parse(localStorage.getItem(iframeKey));
+}
+
+export function setIframe(token) {
+  return localStorage.setItem(iframeKey, JSON.stringify(token));
+}
+
+export function removeIframe() {
+  return localStorage.removeItem(iframeKey);
+}
+
 // 系统统一平台Token信息存储
 const TokenKey = "Admin-Token";
 export function getToken() {
@@ -74,6 +88,7 @@ export function removeLocalCache() {
   removeUserInfo(); // 清除系统用户=》缓存信息
   removeUniwaterCode(); // 清除uniWater 系统授权码=》缓存信息
   removeUniwaterToken(); // 清除uniWatertoken=》缓存信息
+  removeIframe() // 清除 iframe
 }
 
 // import Cookies from "js-cookie";

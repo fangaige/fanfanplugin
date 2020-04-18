@@ -9,8 +9,8 @@ const state = {
     uniwatercode: "", // uniwater 系统授权码
     uniwatertoken: authInfo.getUniwaterToken(), // uniWater详细信息
     userInfo: authInfo.getUserInfo(), //登录用户详细信息
-    menuRoles: null, // 菜单权限
-    functions: null, // 当前系统功能菜单
+    menuRoles: [], // 菜单权限
+    functions: [], // 当前系统功能菜单
     // pageaction: null, // 页面按钮
     // changepwd: false // 是否允许修改密码
   };

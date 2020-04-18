@@ -136,6 +136,17 @@ const actions = {
               reject(error);
             });
         });
+      },
+      iframeRoutersUniWater( {commit, rootState }, asyncRouters){
+
+        return new Promise((resolve, reject) => {
+            const roles = location.pathname.split('/').splice(1) || ['fan']
+            commit("user/SETMENUROLES", roles, {root: true});
+            
+            const accessedRoutes = asyncRouters  // filterAsyncRoutes(asyncRouters, roles);
+            
+            resolve(accessedRoutes);
+        })
       }
 }
 

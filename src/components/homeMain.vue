@@ -37,6 +37,7 @@
       <div class="sidebar-body">
         <el-scrollbar>
           <Sidebar
+            v-if="functions[0] && functions[0].children && functions[0].children.length > 0"
             :isCollapse="isCollapse"
             :menusData="functions[0].children"
           />

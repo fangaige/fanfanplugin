@@ -1,5 +1,5 @@
 import  * as authInfo from '../utils/auth.js';
-import { Loading,Message} from "element-ui";
+import { Loading,Message, MessageBox } from "element-ui";
 
 const permission = function(router, store, asyncRouters){
   let loading=null;
@@ -10,6 +10,10 @@ const permission = function(router, store, asyncRouters){
     if (to.query.UniWater) {
        authInfo.removeLocalCache(); // 清除系统缓存数据信息
        store.commit('user/SET_LOGINTYPE', true)
+       // 是否全屏加载
+       if (to.query.HDSN) {
+         store.commit("settings/SET_IFRAME", true)
+       }
 
        let login =
        store.state.config.UniWaterUrl +
@@ -21,20 +25,23 @@ const permission = function(router, store, asyncRouters){
        location.replace(login);
        return false
     }
-    // 是否全屏加载
-    if (to.query.iframe) {
-      store.commit("settings/SET_IFRAME", true)
-    }
+
     if (to.query.code) {
         store.commit("user/SET_UNIWATERCODE", to.query.code);
         // Uniwater登录,存uniwatertoken，userInfo
         await store.dispatch("user/uniwaterLogin").then().catch(error => {
-          Message.error('登录错误!');
           console.error(error)
-          loginerr()
+          MessageBox({
+            type: 'error',
+            message: '登录错误！',
+            callback: ()=>{
+              loginerr()
+            }
+          });
         }) 
     }
     const hasToken = authInfo.getUniwaterToken()
+    const iframe = authInfo.getIframe()
     // const loginType = authInfo.getLoginSystemType();
     const hasMenuRoles = store.state.user.menuRoles && store.state.user.menuRoles.length > 0
 
@@ -42,6 +49,19 @@ const permission = function(router, store, asyncRouters){
       if (hasMenuRoles) {
         console.log('有token，有menu，next')
           next();
+      }else if(iframe){
+        store.dispatch("permission/iframeRoutersUniWater",asyncRouters).then(res =>{
+          console.log('有token，没menu，iframe，并过滤好路由表',res)
+
+          if(res && res.length > 0){
+            router.addRoutes(res)
+            next({ ...to, replace: true });
+           }else{
+            Message.error('获取菜单为空！请检查权限！');
+           }
+
+        })
+
       }else{
           store.dispatch("permission/generateRoutesForUniWater",asyncRouters).then(res => {
            console.log('有token，没menu，发getmenu，并过滤好路由表',res)
@@ -52,10 +72,15 @@ const permission = function(router, store, asyncRouters){
             Message.error('获取菜单为空！请检查权限！');
            }
 
-          }).catch( err=>{
-            Message.error('获取菜单权限错误!');
-            console.error(err)
-            loginerr()
+          }).catch( error=>{
+            console.error(error)
+            MessageBox({
+              type: 'error',
+              message: '获取菜单权限错误!',
+              callback: ()=>{
+                loginerr()
+              }
+            });
           })
         
       }
@@ -63,8 +88,13 @@ const permission = function(router, store, asyncRouters){
       if (whiteList.indexOf(to.path) !== -1) {
         next();
       } else {
-        Message.error('请先登录！');
-        loginerr()
+        MessageBox({
+          type: 'error',
+          message: '请先登录！',
+          callback: ()=>{
+            loginerr()
+          }
+        });
         // next(`/login?redirect=${to.path}`);
         // endLoading();
       }
