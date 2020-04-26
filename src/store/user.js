@@ -11,6 +11,7 @@ const state = {
     userInfo: authInfo.getUserInfo(), //登录用户详细信息
     menuRoles: [], // 菜单权限
     functions: [], // 当前系统功能菜单
+    userList: []
     // pageaction: null, // 页面按钮
     // changepwd: false // 是否允许修改密码
   };
@@ -54,6 +55,9 @@ const state = {
     SET_FUNCTIONS: (state, functions) => {
       state.functions = functions;
     },
+    SET_USERLIST: (state, list) => {
+      state.userList = list;
+    }
     // SET_PAGEACTION: (state, pageaction) => {
     //   state.pageaction = pageaction;
     // },
@@ -90,7 +94,18 @@ const state = {
           }
         })
     },
-
+    //人员列表
+    userList({ commit, state, rootState }) {
+      return new Promise( (resolve, reject)=> {
+        UniWaterAuthentication.userList(rootState.config ,state.uniwatertoken.access_token)
+        .then(res=> {
+          commit("SET_USERLIST", res.Response);
+          resolve(res)
+        }).catch(error => {
+          reject(error)
+        });
+      })
+    }
 
 
   }

@@ -79,5 +79,28 @@ export default {
           reject(error);
         });
     });
-  }
+  },
+     // 获取人员列表
+      userList(configg ,access_token) {
+      configInit(configg)
+
+          let newTime = new Date().getTime();
+          return new Promise((resolve ,reject) => {
+            instance({
+              method: "post",  
+              url: "/hdl/uniwater/v1.0/user/list.json",
+              params:{
+                access_token: access_token,
+                changed: newTime
+              },
+              data: {}
+            })
+              .then(res => {
+                resolve(res.data);
+              })
+              .catch(error => {
+                reject(error);
+              });
+          });
+        }
 }
